@@ -63,6 +63,20 @@ const Navbar = () => {
                          Register
                     </NavLink>
                </li>
+               <li>
+                    <NavLink
+                         to="/decorations"
+                         className={({ isActive, isPending }) =>
+                              isPending
+                                   ? "pending"
+                                   : isActive
+                                   ? "text-[#FF444A] underline"
+                                   : ""
+                         }
+                    >
+                         Decorations
+                    </NavLink>
+               </li>
           </>
      );
      return (

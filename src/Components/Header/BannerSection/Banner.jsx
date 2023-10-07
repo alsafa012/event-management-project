@@ -1,10 +1,5 @@
 import React from "react";
 import Birthday from "../../../assets/birthday-parties-at-the-discovery-center-southern-tier.png";
-// import { GiPartyPopper } from "react-icons/gi";
-// import { FaHandsHelping } from "react-icons/fa";
-// import { BiCommentDetail } from "react-icons/bi";
-// import { MdOutlineHomeWork } from "react-icons/md";
-
 const Banner = () => {
      // https://i.ibb.co/qpkXM2Y/birthday-parties-at-the-discovery-center-southern-tier.png
      return (

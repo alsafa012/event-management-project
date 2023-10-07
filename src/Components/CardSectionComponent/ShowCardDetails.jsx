@@ -7,7 +7,7 @@ const ShowCardDetails = ({cardDetails}) => {
                 <div className="">
                <div className="flex flex-col shadow-lg rounded-lg p-2">
                     
-                         <img className="w-full h-[200px] rounded-lg" src={image} alt="Categories" />
+                         <img className="w-full object-fill h-[200px] rounded-lg" src={image} alt="Categories" />
                
                     <div className="flex flex-col px-3 py-3 space-y-3 rounded-b-md ">
                          <p className="flex grow">

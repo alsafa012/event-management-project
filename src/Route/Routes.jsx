@@ -7,6 +7,7 @@ import Login from "../Pages/LoginPage/Login";
 import Register from "../Pages/RegisterPage/Register";
 import CardDetails from "../Components/CardSectionComponent/CardDetails";
 import PrivateRoute from "./PrivateRoute";
+import Decoration from "../Pages/Decoration/Decoration";
 
 const myCreatedRouter = createBrowserRouter([
      {
@@ -27,6 +28,13 @@ const myCreatedRouter = createBrowserRouter([
                          </PrivateRoute>
                     ),
                     loader: () => fetch("/category.json"),
+               },
+               {
+                    path:"/decorations",
+                    element:<PrivateRoute>
+                         <Decoration></Decoration>
+                    </PrivateRoute>,
+                    loader:()=>fetch("/gallery.json"),
                },
                {
                     path: "/login",

@@ -23,7 +23,7 @@ const Cards = ({ card }) => {
                          </p>
                     </div>
                <Link to={`/category/${id}`}>
-               <button className="btn btn-secondary">See Details</button>
+               <button className="btn bg-[#F87147] text-white">See Details</button>
                </Link>
                </div>
           </div>
