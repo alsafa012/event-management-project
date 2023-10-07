@@ -1,11 +1,16 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProviders/AuthProvider";
 import { FiEye, FiEyeOff } from "react-icons/fi";
+// import toast, { Toaster } from "react-hot-toast";
+import Swal from "sweetalert2";
 const Login = () => {
      const [showPassword, setShowPassword] = useState(false);
+     const [errorMessage, setErrorMessage] = useState("");
+     const location = useLocation();
+     const navigate = useNavigate();
 
-     const { user, signIn } = useContext(AuthContext);
+     const { signIn } = useContext(AuthContext);
      const handleLogin = (e) => {
           e.preventDefault();
           const form = new FormData(e.currentTarget);
@@ -15,15 +20,28 @@ const Login = () => {
           const password = form.get("password");
 
           console.log("register", email, password);
+          setErrorMessage("");
 
           // user sign-in using email && password
           signIn(email, password)
                .then((result) => {
                     console.log(result.user);
-                    alert("User login successful");
+                    Swal.fire(
+                         'Good job!',
+                         'User Sign in was successful',
+                         'success'
+                       )
+                    // toast.error("This didn't work.");
+                    // alert("User login successful");
+
+                    navigate(location?.state ? location.state : "/");
                })
                .catch((error) => {
-                    alert(error.message);
+                    console.log(error.message);
+                    setErrorMessage(
+                         "User login failed..! Invalid email or password "
+                    );
+                    // alert(error.message);
                     // console.error(error);
                });
      };
@@ -56,20 +74,33 @@ const Login = () => {
                               className="input input-bordered"
                               required
                          />
-                         <label className="label">
+                         {/* <label className="label">
                               <a
                                    href="#"
                                    className="label-text-alt link link-hover"
                               >
                                    Forgot password?
                               </a>
-                         </label>
-                         <span className="text-xl absolute top-[42%] right-4" onClick={()=>setShowPassword(!showPassword)}>
-                              {
-                                   showPassword ? <FiEye></FiEye> : <FiEyeOff></FiEyeOff>
-                              }
+                         </label> */}
+                         <span
+                              className="text-xl absolute top-[42%] right-4"
+                              onClick={() => setShowPassword(!showPassword)}
+                         >
+                              {showPassword ? (
+                                   <FiEye></FiEye>
+                              ) : (
+                                   <FiEyeOff></FiEyeOff>
+                              )}
                          </span>
                     </div>
+                    <h3>
+                         {errorMessage && (
+                              <p className="text-red-600 pt-1">
+                                   {" "}
+                                   {errorMessage}{" "}
+                              </p>
+                         )}
+                    </h3>
                     <div className="form-control mt-6">
                          <button className="btn btn-primary">Login</button>
                     </div>
@@ -83,6 +114,7 @@ const Login = () => {
                          Register
                     </Link>
                </p>
+              
                <div>
                     <button
                          type="button"

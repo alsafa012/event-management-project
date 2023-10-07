@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../AuthProviders/AuthProvider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
      const { user, signOutUser } = useContext(AuthContext);
@@ -9,7 +10,11 @@ const Navbar = () => {
           // console.log("asd")
           signOutUser()
           .then(()=>{
-               alert('Sign out was successful')
+               Swal.fire(
+                    'Good job!',
+                    'Sign out was successful',
+                    'success'
+                  )
           })
           .catch();
          
@@ -103,10 +108,10 @@ const Navbar = () => {
 
                     <div className="navbar-end">
                          {user ? (
-                              <button onClick={handleSignOut}>Sign Out</button>
+                              <button className="btn" onClick={handleSignOut}>Sign Out</button>
                          ) : (
                               <Link to="/login">
-                                   <button>Sign Up</button>
+                                   <button className="btn">Sign Up</button>
                               </Link>
                          )}
                     </div>
