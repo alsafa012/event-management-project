@@ -1,0 +1,44 @@
+[
+     {
+          "id": "1",
+          "name": "Weddings",
+          "image": "https://i.ibb.co/yPmznfB/unsplash-image-1-Bs2s-Z9f-D2-Q.jpg",
+          "price": "$79",
+          "description": "Join us to make your wedding joyful!"
+     },
+     {
+          "id": "2",
+          "name": "Birthday Parties",
+          "image": "https://i.ibb.co/yF4r9Xy/Birthday-cake-with-candles.webp",
+          "price": "$50",
+          "description": "Join us to make your party unforgettable!"
+     },
+     {
+          "id": "3",
+          "name": "Anniversaries Event",
+          "image": "https://i.ibb.co/8r0ZnM6/360-F-426036393-N5-Uj-Hu-ILNAVf-Tqbct9s1e9d-HKMv6-Yzol.jpg",
+          "price": "$25",
+          "description": "Join us to make your event unforgettable!"
+     },
+     {
+          "id": "4",
+          "name": "Engagement Parties",
+          "image": "https://i.ibb.co/8r0ZnM6/360-F-426036393-N5-Uj-Hu-ILNAVf-Tqbct9s1e9d-HKMv6-Yzol.jpg",
+          "price": "$99",
+          "description": "Join us to make your event unforgettable!"
+     },
+     {
+          "id": "5",
+          "name": "Retirement Parties",
+          "image": "https://i.ibb.co/8r0ZnM6/360-F-426036393-N5-Uj-Hu-ILNAVf-Tqbct9s1e9d-HKMv6-Yzol.jpg",
+          "price": "Free Admission",
+          "description": "Join us to make your retirement party special!"
+     },
+     {
+          "id": "6",
+          "name": "Baby Shower",
+          "image": "https://i.ibb.co/8r0ZnM6/360-F-426036393-N5-Uj-Hu-ILNAVf-Tqbct9s1e9d-HKMv6-Yzol.jpg",
+          "price": "$10",
+          "description": "Join us to make your baby shower party special!"
+     }
+]
