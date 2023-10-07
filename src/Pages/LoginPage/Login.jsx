@@ -1,9 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProviders/AuthProvider";
-
+import { FiEye, FiEyeOff } from "react-icons/fi";
 const Login = () => {
-     const { signIn } = useContext(AuthContext);
+     const [showPassword, setShowPassword] = useState(false);
+
+     const { user, signIn } = useContext(AuthContext);
      const handleLogin = (e) => {
           e.preventDefault();
           const form = new FormData(e.currentTarget);
@@ -18,9 +20,11 @@ const Login = () => {
           signIn(email, password)
                .then((result) => {
                     console.log(result.user);
+                    alert("User login successful");
                })
                .catch((error) => {
-                    console.error(error);
+                    alert(error.message);
+                    // console.error(error);
                });
      };
      return (
@@ -28,7 +32,7 @@ const Login = () => {
                <p className="text-3xl font-bold mb-6 text-center">
                     Login your account
                </p>
-               <form onSubmit={handleLogin} className="w-1/2 mx-auto">
+               <form onSubmit={handleLogin} className="w-4/5 md:w-1/2 mx-auto">
                     <div className="form-control">
                          <label className="label">
                               <span className="label-text">Email</span>
@@ -41,12 +45,12 @@ const Login = () => {
                               required
                          />
                     </div>
-                    <div className="form-control">
+                    <div className="form-control relative">
                          <label className="label">
                               <span className="label-text">Password</span>
                          </label>
                          <input
-                              type="password"
+                              type={showPassword ? "text" : "password"}
                               name="password"
                               placeholder="Password"
                               className="input input-bordered"
@@ -60,6 +64,11 @@ const Login = () => {
                                    Forgot password?
                               </a>
                          </label>
+                         <span className="text-xl absolute top-[42%] right-4" onClick={()=>setShowPassword(!showPassword)}>
+                              {
+                                   showPassword ? <FiEye></FiEye> : <FiEyeOff></FiEyeOff>
+                              }
+                         </span>
                     </div>
                     <div className="form-control mt-6">
                          <button className="btn btn-primary">Login</button>

@@ -3,21 +3,16 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../AuthProviders/AuthProvider";
 
 const Navbar = () => {
-     const { user, signOut } = useContext(AuthContext);
+     const { user, signOutUser } = useContext(AuthContext);
 
      const handleSignOut = () => {
           // console.log("asd")
-          signOut()
-               .then(() => {
-                    // Sign-out successful.
-               })
-               .catch((error) => {
-                    // An error happened.
-               });
-          // .then(result=>{
-          //      alert('success')
-          // })
-          // .catch()
+          signOutUser()
+          .then(()=>{
+               alert('Sign out was successful')
+          })
+          .catch();
+         
      };
      const navLists = (
           <>
