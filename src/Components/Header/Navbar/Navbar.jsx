@@ -1,52 +1,68 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../../AuthProviders/AuthProvider";
 
 const Navbar = () => {
+     const { user, signOut } = useContext(AuthContext);
+
+     const handleSignOut = () => {
+          // console.log("asd")
+          signOut()
+               .then(() => {
+                    // Sign-out successful.
+               })
+               .catch((error) => {
+                    // An error happened.
+               });
+          // .then(result=>{
+          //      alert('success')
+          // })
+          // .catch()
+     };
      const navLists = (
           <>
-              <li>
-              <NavLink
-                    to="/"
-                    className={({ isActive, isPending }) =>
-                         isPending
-                              ? "pending"
-                              : isActive
-                              ? "text-[#FF444A] underline"
-                              : ""
-                    }
-               >
-                    Home
-               </NavLink>
-              </li>
-              <li>
-              <NavLink
-                    to="/login"
-                    className={({ isActive, isPending }) =>
-                         isPending
-                              ? "pending"
-                              : isActive
-                              ? "text-[#FF444A] underline"
-                              : ""
-                    }
-               >
-                    Login
-               </NavLink>
-              </li>
-              <li>
-              <NavLink
-                    to="/register"
-                    className={({ isActive, isPending }) =>
-                         isPending
-                              ? "pending"
-                              : isActive
-                              ? "text-[#FF444A] underline"
-                              : ""
-                    }
-               >
-                    Register
-               </NavLink>
-              </li>
-              
+               <li>
+                    <NavLink
+                         to="/"
+                         className={({ isActive, isPending }) =>
+                              isPending
+                                   ? "pending"
+                                   : isActive
+                                   ? "text-[#FF444A] underline"
+                                   : ""
+                         }
+                    >
+                         Home
+                    </NavLink>
+               </li>
+               <li>
+                    <NavLink
+                         to="/login"
+                         className={({ isActive, isPending }) =>
+                              isPending
+                                   ? "pending"
+                                   : isActive
+                                   ? "text-[#FF444A] underline"
+                                   : ""
+                         }
+                    >
+                         Login
+                    </NavLink>
+               </li>
+               <li>
+                    <NavLink
+                         to="/register"
+                         className={({ isActive, isPending }) =>
+                              isPending
+                                   ? "pending"
+                                   : isActive
+                                   ? "text-[#FF444A] underline"
+                                   : ""
+                         }
+                    >
+                         Register
+                    </NavLink>
+               </li>
           </>
      );
      return (
@@ -89,8 +105,15 @@ const Navbar = () => {
                               {navLists}
                          </ul>
                     </div>
+
                     <div className="navbar-end">
-                         <a className="btn">Button</a>
+                         {user ? (
+                              <button onClick={handleSignOut}>Sign Out</button>
+                         ) : (
+                              <Link to="/login">
+                                   <button>Sign Up</button>
+                              </Link>
+                         )}
                     </div>
                </div>
           </div>

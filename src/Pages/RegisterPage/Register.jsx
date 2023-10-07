@@ -1,15 +1,43 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProviders/AuthProvider";
 
 const Register = () => {
+
+        const {createUser} = useContext(AuthContext)
+
+
+     const handleRegister = (e)=>{
+          e.preventDefault();
+          const form = new FormData(e.currentTarget)
+          // const name = form.get("name")
+          // const photo = form.get("photo")
+          const email = form.get("email")
+          const password = form.get("password")
+          
+          console.log("register", email, password)
+
+
+
+          // create a new user
+          createUser(email,password)
+          .then(result=>{
+               console.log(result.user)
+               alert('successfully registered')
+          })
+          .catch(error=>{
+               console.error(error);
+               alert(error.message)
+          })
+     }
      return (
           <div>
                <p className="text-3xl font-bold mb-6 text-center">
                     Register your account
                </p>
 
-               <form className="w-1/2 mx-auto">
-                    <div className="form-control">
+               <form onSubmit={handleRegister} className="w-1/2 mx-auto">
+                    {/* <div className="form-control">
                          <label className="label">
                               <span className="label-text">Name</span>
                          </label>
@@ -32,7 +60,7 @@ const Register = () => {
                               className="input input-bordered"
                               required
                          />
-                    </div>
+                    </div> */}
                     <div className="form-control">
                          <label className="label">
                               <span className="label-text">Email</span>
@@ -59,7 +87,7 @@ const Register = () => {
           
                     </div>
                     <div className="form-control mt-6">
-                         <button className="btn btn-primary">Login</button>
+                         <button className="btn btn-primary">Register</button>
                     </div>
                </form>
                <p className="text-center py-4">
