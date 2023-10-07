@@ -47,8 +47,8 @@ const Login = () => {
      };
      return (
           <div>
-               <p className="text-3xl font-bold mb-6 text-center">
-                    Login your account
+               <p className="text-3xl font-bold mb-6 text-center text-[#fcb900]">
+                    Login Page
                </p>
                <form onSubmit={handleLogin} className="w-4/5 md:w-1/2 mx-auto">
                     <div className="form-control">
@@ -83,7 +83,7 @@ const Login = () => {
                               </a>
                          </label> */}
                          <span
-                              className="text-xl absolute top-[42%] right-4"
+                              className="text-xl absolute top-[60%] right-4"
                               onClick={() => setShowPassword(!showPassword)}
                          >
                               {showPassword ? (
@@ -96,13 +96,13 @@ const Login = () => {
                     <h3>
                          {errorMessage && (
                               <p className="text-red-600 pt-1">
-                                   {" "}
-                                   {errorMessage}{" "}
+                                   
+                                   {errorMessage}
                               </p>
                          )}
                     </h3>
                     <div className="form-control mt-6">
-                         <button className="btn btn-primary">Login</button>
+                         <button className="btn text-white bg-[#ff6900]">Login</button>
                     </div>
                </form>
                <p className="text-center py-4">
@@ -111,7 +111,7 @@ const Login = () => {
                          className="text-green-500 font-bold hover:underline ml-1"
                          to="/register"
                     >
-                         Register
+                         Sign Up
                     </Link>
                </p>
               

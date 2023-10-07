@@ -53,11 +53,14 @@ const Register = () => {
      };
      return (
           <div>
-               <p className=" text-lg md:text-3xl font-bold mb-6 text-center">
-                    Register your account
+               <p className=" text-3xl font-bold mb-6 text-center text-[#fcb900]">
+                    Sign Up Page
                </p>
 
-               <form onSubmit={handleRegister} className="w-4/5 md:w-1/2 mx-auto">
+               <form
+                    onSubmit={handleRegister}
+                    className="w-4/5 md:w-1/2 mx-auto"
+               >
                     {/* <div className="form-control">
                          <label className="label">
                               <span className="label-text">Name</span>
@@ -105,23 +108,22 @@ const Register = () => {
                               className="input input-bordered"
                               required
                          />
-                         
-                              <span
-                                   className="text-xl absolute top-[60%] right-4"
-                                   onClick={() =>
-                                        setShowPassword(!showPassword)
-                                   }
-                              >
-                                   {showPassword ? (
-                                        <FiEye> </FiEye>
-                                   ) : (
-                                        <FiEyeOff></FiEyeOff>
-                                   )}
-                              </span>
-                         
+
+                         <span
+                              className="text-xl absolute top-[60%] right-4"
+                              onClick={() => setShowPassword(!showPassword)}
+                         >
+                              {showPassword ? (
+                                   <FiEye> </FiEye>
+                              ) : (
+                                   <FiEyeOff></FiEyeOff>
+                              )}
+                         </span>
                     </div>
                     <div className="form-control mt-6">
-                         <button className="btn btn-primary">Register</button>
+                         <button className="btn text-white bg-[#ff6900]">
+                         Sign Up
+                         </button>
                     </div>
                </form>
                <p className="text-center py-4">

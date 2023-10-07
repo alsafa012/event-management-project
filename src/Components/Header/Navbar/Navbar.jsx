@@ -28,7 +28,7 @@ const Navbar = () => {
                               isPending
                                    ? "pending"
                                    : isActive
-                                   ? "text-[#FF444A] underline"
+                                   ? "text-[#ff6900] underline"
                                    : ""
                          }
                     >
@@ -42,7 +42,7 @@ const Navbar = () => {
                               isPending
                                    ? "pending"
                                    : isActive
-                                   ? "text-[#FF444A] underline"
+                                   ? "text-[#ff6900] underline"
                                    : ""
                          }
                     >
@@ -56,7 +56,7 @@ const Navbar = () => {
                               isPending
                                    ? "pending"
                                    : isActive
-                                   ? "text-[#FF444A] underline"
+                                   ? "text-[#ff6900] underline"
                                    : ""
                          }
                     >
@@ -70,7 +70,7 @@ const Navbar = () => {
                               isPending
                                    ? "pending"
                                    : isActive
-                                   ? "text-[#FF444A] underline"
+                                   ? "text-[#ff6900] underline"
                                    : ""
                          }
                     >

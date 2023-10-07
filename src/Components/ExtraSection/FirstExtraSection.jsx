@@ -10,7 +10,7 @@ const FirstExtraSection = () => {
                <div className="my-5 md:my-14">
                <div>
                     <h2 className="text-center text-3xl font-bold">
-                        <span className='text-[#F87147]'>Hello! </span> We Are an Event Planning Agency
+                        <span className='text-[#fcb900]'>Hello! </span> We Are an Event Planning Agency
                     </h2>
                     <p className="w-[50%] mx-auto text-center my-5 text-sm font-light">
                          As the premier event planning company in the area, we

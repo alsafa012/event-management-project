@@ -17,7 +17,7 @@ const GallerySection = () => {
      };
      return (
           <div className="text-center space-y-10">
-               <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-[#F87147]">
+               <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-[#fcb900]">
                     Our Gallery
                </h2>
                <p className="text-sm font-light">OUR RECENT PROJECTS...!!</p>
@@ -46,7 +46,8 @@ const GallerySection = () => {
 
                <button
                     onClick={handleGAllery}
-                    className="btn bg-[#F87147] text-white"
+                    className="btn bg-[#ff6900] text-white"
+                    // className="btn bg-[#cf2e2e] text-white"
                >
                     {" "}
                     See more{" "}
