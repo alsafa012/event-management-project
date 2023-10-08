@@ -7,27 +7,36 @@ import {
      signInWithEmailAndPassword,
      signInWithPopup,
      signOut,
+     updateProfile,
 } from "firebase/auth";
 import app from "../Firebase/firebase.config";
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
-
      const [user, setUser] = useState(null);
      const [loader, setLoader] = useState(true);
 
      // google sign in
-    const googleSignIn = (value)=>{
-     setLoader(true);
-     return signInWithPopup(auth,provider);
-    }
+     const googleSignIn = (value) => {
+          setLoader(true);
+          return signInWithPopup(auth, provider);
+     };
 
      // create user
      const createUser = (email, password) => {
           setLoader(true);
           return createUserWithEmailAndPassword(auth, email, password);
      };
+
+     // update user profile
+     const updateUserProfile = (name,photo) => {
+          return updateProfile(auth.currentUser, {
+               displayName: name,
+               photoURL: photo,
+          });
+     };
+
      // sign in user
      const signIn = (email, password) => {
           setLoader(true);
@@ -57,6 +66,7 @@ const AuthProvider = ({ children }) => {
           signIn,
           signOutUser,
           loader,
+          updateUserProfile,
      };
      return (
           <AuthContext.Provider value={authInfo}>

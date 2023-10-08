@@ -1,22 +1,24 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProviders/AuthProvider";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 
 const Register = () => {
      const [showPassword, setShowPassword] = useState(false);
 
-     const { createUser } = useContext(AuthContext);
+     const { createUser , updateUserProfile } = useContext(AuthContext);
+
+     const navigate = useNavigate();
 
      const handleRegister = (e) => {
           e.preventDefault();
           const form = new FormData(e.currentTarget);
-          // const name = form.get("name")
-          // const photo = form.get("photo")
+          const name = form.get("name");
+          const photo = form.get("photo");
           const email = form.get("email");
           const password = form.get("password");
 
-          console.log("register", email, password);
+          console.log("register", name, photo, email, password);
 
           // checking the password
           if (password.length < 6) {
@@ -43,8 +45,16 @@ const Register = () => {
                // if(password.length > 6)
 
                .then((result) => {
-                    console.log(result.user);
+                    // console.log(result.user);
+
+                    // update profile
+                    updateUserProfile(name,photo)
+                    .then(() => {
+                          alert('Profile updated')
+                    })
+
                     alert("successfully registered");
+                    navigate(location?.state ? location.state : "/");
                })
                .catch((error) => {
                     console.error(error);
@@ -61,7 +71,7 @@ const Register = () => {
                     onSubmit={handleRegister}
                     className="w-4/5 md:w-1/2 mx-auto"
                >
-                    {/* <div className="form-control">
+                    <div className="form-control">
                          <label className="label">
                               <span className="label-text">Name</span>
                          </label>
@@ -84,7 +94,7 @@ const Register = () => {
                               className="input input-bordered"
                               required
                          />
-                    </div> */}
+                    </div>
                     <div className="form-control">
                          <label className="label">
                               <span className="label-text">Email</span>
@@ -120,9 +130,24 @@ const Register = () => {
                               )}
                          </span>
                     </div>
+                    <div className="form-control">
+                         <div className="flex items-center gap-2 mt-2">
+                              <input type="checkbox" name="" id="" required />
+                              <p>
+                                   Please accept our
+                                   <a
+                                        className="hover:underline hover:text-red-500"
+                                        href="#"
+                                   >
+                                        {" "}
+                                        terms and conditions
+                                   </a>
+                              </p>
+                         </div>
+                    </div>
                     <div className="form-control mt-6">
                          <button className="btn text-white bg-[#ff6900]">
-                         Sign Up
+                              Sign Up
                          </button>
                     </div>
                </form>
