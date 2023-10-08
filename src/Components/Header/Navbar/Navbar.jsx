@@ -9,15 +9,14 @@ const Navbar = () => {
      const handleSignOut = () => {
           // console.log("asd")
           signOutUser()
-          .then(()=>{
-               Swal.fire(
-                    'Good job!',
-                    'Sign out was successful',
-                    'success'
-                  )
-          })
-          .catch();
-         
+               .then(() => {
+                    Swal.fire(
+                         "Good job!",
+                         "Sign out was successful",
+                         "success"
+                    );
+               })
+               .catch();
      };
      const navLists = (
           <>
@@ -74,7 +73,7 @@ const Navbar = () => {
                                    : ""
                          }
                     >
-                          Decorations Gallery
+                         Decorations Gallery
                     </NavLink>
                </li>
                <li>
@@ -88,7 +87,7 @@ const Navbar = () => {
                                    : ""
                          }
                     >
-                          Shop
+                         Shop
                     </NavLink>
                </li>
           </>
@@ -135,8 +134,16 @@ const Navbar = () => {
                     </div>
 
                     <div className="navbar-end">
+                         {user && (
+                              <div className="w-10 rounded-full">
+                                   <img src="https://i.ibb.co/VtvZtm2/user.png" />
+                                   <p>{user.email}</p>
+                              </div>
+                         )}
                          {user ? (
-                              <button className="btn" onClick={handleSignOut}>Sign Out</button>
+                              <button className="btn" onClick={handleSignOut}>
+                                   Sign Out
+                              </button>
                          ) : (
                               <Link to="/login">
                                    <button className="btn">Sign Up</button>

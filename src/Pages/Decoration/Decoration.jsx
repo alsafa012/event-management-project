@@ -17,7 +17,7 @@ const Decoration = () => {
                     ))}
                </div>
                { 
-                    <div className={dataLength === decorationData.length && "hidden "}>
+                    <div className={dataLength === decorationData.length ? "hidden" : "block"}>
                          <button onClick={()=>setDataLength(decorationData.length)} className="btn bg-[#ff6900] px-8 text-white font-medium mt-8">See all</button>
                     </div>
                }

@@ -13,15 +13,19 @@ export const AuthContext = createContext(null);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
+
      const [user, setUser] = useState(null);
      const [loader, setLoader] = useState(true);
+
      // google sign in
     const googleSignIn = (value)=>{
+     setLoader(true);
      return signInWithPopup(auth,provider);
     }
 
      // create user
      const createUser = (email, password) => {
+          setLoader(true);
           return createUserWithEmailAndPassword(auth, email, password);
      };
      // sign in user
