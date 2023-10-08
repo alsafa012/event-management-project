@@ -4,14 +4,14 @@
           "name": "Weddings",
           "image": "https://i.ibb.co/NNSYLqT/product-2-300x300.jpg",
           "price": "79",
-          "description": "Join us to make your wedding joyful!"
+          "description": "Happy Birthday Ballon"
      },
      {
           "id": "2",
           "name": "Birthday Parties",
           "image": "https://i.ibb.co/D7PkqVZ/product-1-300x300.jpg",
           "price": "50",
-          "description": "Join us to make your party unforgettable!"
+          "description": "Happy Birthday Ballon"
      },
 
 
@@ -20,48 +20,48 @@
           "name": "Anniversaries Event",
           "image": "https://i.ibb.co/k8pxBDD/product-13-300x300.jpg",
           "price": "25",
-          "description": "Join us to make your event unforgettable!"
+          "description": "Bundle of Lollies"
      },
      {
           "id": "4",
           "name": "Engagement Parties",
           "image": "https://i.ibb.co/7V7D2PP/product-12-300x300.jpg",
           "price": "99",
-          "description": "Join us to make your event unforgettable!"
+          "description": "Party Funny Plates"
      },
      {
           "id": "5",
           "name": "Retirement Parties",
           "image": "https://i.ibb.co/61WL6vb/product-7.jpg",
-          "price": "Free Admission",
-          "description": "Join us to make your retirement party special!"
+          "price": "89",
+          "description": "Birthday Centerpiece"
      },
      {
           "id": "6",
           "name": "Baby Shower",
           "image": "https://i.ibb.co/vBmQjTw/product-5-300x300.jpg",
           "price": "80",
-          "description": "Join us to make your baby shower party special!"
+          "description": "Set of Clown Hats"
      },
      {
           "id": "7",
           "name": "Retirement Parties",
           "image": "https://i.ibb.co/ydRb8R3/product-10-300x300.jpg",
-          "price": "Free Admission",
-          "description": "Join us to make your retirement party special!"
+          "price": "67",
+          "description": "Silicon Cake Molds"
      },
      {
           "id": "8",
           "name": "Retirement Parties",
           "image": "https://i.ibb.co/cCMpkzh/product-8-300x300.jpg",
-          "price": "Free Admission",
-          "description": "Join us to make your retirement party special!"
+          "price": "95",
+          "description": "Party Centerpiece"
      },
      {
           "id": "9",
           "name": "Baby Shower",
           "image": "https://i.ibb.co/1bPqjHN/product-9.jpg",
           "price": "80",
-          "description": "Join us to make your baby shower party special!"
+          "description": "One-Year-Old Piece"
      }
 ]

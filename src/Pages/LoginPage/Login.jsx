@@ -2,8 +2,8 @@ import React, { useContext, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProviders/AuthProvider";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-import Swal from "sweetalert2";
-
+// import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 const Login = () => {
      const [showPassword, setShowPassword] = useState(false);
@@ -17,20 +17,16 @@ const Login = () => {
      // sign in with google
 
      const handleGoogleSignIn = () => {
-          // if (user) {
-          //      return alert("aalready login");
-          // }
+          if (user) {
+               toast.error("user already logged in");
+               return;
+          }
           // if(!user.email){
           //      return alert("Please enter a valid email");
           // }
           googleSignIn()
                .then((result) => {
-                    console.log(result.user);
-                    Swal.fire(
-                         "Good job!",
-                         "User Sign in was successful",
-                         "success"
-                    );
+                    toast.success("Successfully toasted!");
                     navigate(location?.state ? location.state : "/");
                })
                .catch((error) => {
@@ -38,15 +34,14 @@ const Login = () => {
                });
      };
      const handleLogin = (e) => {
-          // if(user){
-          //      return alert('aalready login');
-          //  }
+          if(user){
+               toast.error("user already logged in");
+           }
           e.preventDefault();
           const form = new FormData(e.currentTarget);
           const email = form.get("email");
           const password = form.get("password");
 
-          console.log("register", email, password);
           setErrorMessage("");
           // if(user.email !== email && user.password !== password){
           //      return alert("User login failed..! Invalid email or password");
@@ -58,26 +53,15 @@ const Login = () => {
           //      return alert("Please enter a valid password");
           // }
 
-          // const emailRef =
-
           // user sign-in using email && password
           signIn(email, password)
-
-          
-
                .then((result) => {
-                    console.log(result.user);
-                  
-                    Swal.fire(
-                         "Good job!",
-                         "User Sign in was successful",
-                         "success"
-                    );
-               
+
+                    toast.success("user sign-in successfully...");
+          
                     navigate(location?.state ? location.state : "/");
                })
                .catch((error) => {
-                    console.log(error.message);
                     setErrorMessage(
                          "User login failed..! Invalid email or password"
                     );

@@ -2,11 +2,14 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProviders/AuthProvider";
 import { FiEye, FiEyeOff } from "react-icons/fi";
+import toast from "react-hot-toast";
 
 const Register = () => {
      const [showPassword, setShowPassword] = useState(false);
 
-     const { createUser , updateUserProfile } = useContext(AuthContext);
+     const { user,createUser , updateUserProfile } = useContext(AuthContext);
+
+     const [errorMessage, setErrorMessage] = useState("");
 
      const navigate = useNavigate();
 
@@ -22,43 +25,42 @@ const Register = () => {
 
           // checking the password
           if (password.length < 6) {
-               alert("Please enter at least 6 character password");
+               setErrorMessage("Please enter at least 6 character password");
                return;
           }
-          // if (!/(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\-])/.test(password))
-          else if (
-               !/(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}[\]:;<>,.?~\\-])/.test(password)
-          ) {
-               alert(
-                    "Please enter a password with at least one uppercase letter"
-               );
+     
+          else if((!/(?=.*[A-Z])/.test(password))){
+               setErrorMessage("Password must contain at least one uppercase letter.")
+               return;
+          }else if(!/(?=.*[!@#$%^&*()_+{}[\]:;<>,.?~\\-])/.test(password)){
+               setErrorMessage("Password must contain at least one special character.")
                return;
           }
-
-          //  else if (!checkbox) {
-          //      setRegisterError("Please accept our terms and conditions");
-          //      return;
-          // }
 
           // create a new user
+          if (user) {
+               toast.error("user already logged in");
+               return;
+          }
           createUser(email, password)
-               // if(password.length > 6)
-
+               
                .then((result) => {
                     // console.log(result.user);
 
                     // update profile
+
                     updateUserProfile(name,photo)
                     .then(() => {
-                          alert('Profile updated')
+                    // toast.success('Profile updated')
                     })
 
-                    alert("successfully registered");
+                    toast.success("user successfully sign-up");
+
                     navigate(location?.state ? location.state : "/");
                })
                .catch((error) => {
-                    console.error(error);
-                    alert(error.message);
+                    // console.error(error);
+                    toast.error("something went wrong.please try again.");
                });
      };
      return (
@@ -132,19 +134,25 @@ const Register = () => {
                     </div>
                     <div className="form-control">
                          <div className="flex items-center gap-2 mt-2">
-                              <input type="checkbox" name="" id="" required />
+                              <input type="checkbox" name="terms" id="" required />
                               <p>
                                    Please accept our
                                    <a
                                         className="hover:underline hover:text-red-500"
                                         href="#"
                                    >
-                                        {" "}
                                         terms and conditions
                                    </a>
                               </p>
                          </div>
                     </div>
+                    <h3>
+                         {errorMessage && (
+                              <p className="text-red-600 pt-1">
+                                   {errorMessage}
+                              </p>
+                         )}
+                    </h3>
                     <div className="form-control mt-6">
                          <button className="btn text-white bg-[#ff6900]">
                               Sign Up

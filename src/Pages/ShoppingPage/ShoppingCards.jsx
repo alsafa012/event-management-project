@@ -28,7 +28,7 @@ const ShoppingCards = ({ data }) => {
                          </p>
                     </div>
                     <div className="flex justify-between items-center">
-                         <p className="text-xl font-medium">
+                         <p className="text-xl font-medium text-red-500">
                               Price: ${data.price}
                          </p>
                          <Link>
