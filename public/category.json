@@ -3,28 +3,28 @@
           "id": "1",
           "name": "Weddings",
           "image": "https://i.ibb.co/yPmznfB/unsplash-image-1-Bs2s-Z9f-D2-Q.jpg",
-          "price": "$79",
+          "price": "79",
           "description": "Join us to make your wedding joyful!"
      },
      {
           "id": "2",
           "name": "Birthday Parties",
           "image": "https://i.ibb.co/PxM9v5V/photo-1555077730-1b8b211018c4.jpg",
-          "price": "$50",
+          "price": "50",
           "description": "Join us to make your party unforgettable!"
      },
      {
           "id": "3",
           "name": "Anniversaries Event",
           "image": "https://i.ibb.co/NW84w9M/1686748229-large.jpg",
-          "price": "$25",
+          "price": "25",
           "description": "Join us to make your event unforgettable!"
      },
      {
           "id": "4",
           "name": "Engagement Parties",
           "image": "https://i.ibb.co/pXSMtqC/love-406905.jpg",
-          "price": "$99",
+          "price": "99",
           "description": "Join us to make your event unforgettable!"
      },
      {
@@ -38,7 +38,7 @@
           "id": "6",
           "name": "Baby Shower",
           "image": "https://i.ibb.co/0tqGhYF/baby-shower.png",
-          "price": "$10",
+          "price": "80",
           "description": "Join us to make your baby shower party special!"
      }
 ]

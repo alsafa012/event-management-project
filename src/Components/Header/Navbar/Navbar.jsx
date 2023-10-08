@@ -74,7 +74,21 @@ const Navbar = () => {
                                    : ""
                          }
                     >
-                         Decorations
+                          Decorations Gallery
+                    </NavLink>
+               </li>
+               <li>
+                    <NavLink
+                         to="/Shop"
+                         className={({ isActive, isPending }) =>
+                              isPending
+                                   ? "pending"
+                                   : isActive
+                                   ? "text-[#ff6900] underline"
+                                   : ""
+                         }
+                    >
+                          Shop
                     </NavLink>
                </li>
           </>

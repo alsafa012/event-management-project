@@ -8,6 +8,7 @@ import Register from "../Pages/RegisterPage/Register";
 import CardDetails from "../Components/CardSectionComponent/CardDetails";
 import PrivateRoute from "./PrivateRoute";
 import Decoration from "../Pages/Decoration/Decoration";
+import ShoppingPage from "../Pages/ShoppingPage/ShoppingPage";
 
 const myCreatedRouter = createBrowserRouter([
      {
@@ -30,11 +31,13 @@ const myCreatedRouter = createBrowserRouter([
                     loader: () => fetch("/category.json"),
                },
                {
-                    path:"/decorations",
-                    element:<PrivateRoute>
-                         <Decoration></Decoration>
-                    </PrivateRoute>,
-                    loader:()=>fetch("/gallery.json"),
+                    path: "/decorations",
+                    element: (
+                         <PrivateRoute>
+                              <Decoration></Decoration>
+                         </PrivateRoute>
+                    ),
+                    loader: () => fetch("/gallery.json"),
                },
                {
                     path: "/login",
@@ -43,6 +46,15 @@ const myCreatedRouter = createBrowserRouter([
                {
                     path: "/register",
                     element: <Register></Register>,
+               },
+               {
+                    path: "/shop",
+                    element: (
+                         <PrivateRoute>
+                              <ShoppingPage></ShoppingPage>
+                         </PrivateRoute>
+                    ),
+                    loader: () => fetch("/shop.json"),
                },
           ],
      },

@@ -26,12 +26,11 @@ const Cards = ({ card }) => {
                          </p>
                     </div>
                     <div className="flex justify-between items-center">
-                         <p className="text-xl font-medium">Price: $</p>
+                         <p className="text-xl font-medium">Price: ${price}</p>
                          <Link to={`/category/${id}`}>
                               <button className="btn bg-[#ff6900] text-white">
                                    See Details
                               </button>
-                              {/* <button className="btn bg-[#cf2e2e] text-white">See Details</button> */}
                          </Link>
                     </div>
                </div>
