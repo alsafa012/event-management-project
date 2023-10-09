@@ -10,7 +10,7 @@ const Navbar = () => {
           // console.log("asd")
           signOutUser()
                .then(() => {
-                    toast.success('user logged out successfully..!')
+                    toast.success("user logged out successfully..!");
                })
                .catch();
      };
@@ -30,20 +30,39 @@ const Navbar = () => {
                          Home
                     </NavLink>
                </li>
-               <li>
-                    <NavLink
-                         to="/login"
-                         className={({ isActive, isPending }) =>
-                              isPending
-                                   ? "pending"
-                                   : isActive
-                                   ? "text-[#ff6900] underline"
-                                   : ""
-                         }
-                    >
-                         Login
-                    </NavLink>
-               </li>
+               {user && (
+                    <li>
+                         <NavLink
+                              to="/decorations"
+                              className={({ isActive, isPending }) =>
+                                   isPending
+                                        ? "pending"
+                                        : isActive
+                                        ? "text-[#ff6900] underline"
+                                        : ""
+                              }
+                         >
+                              Decorations Gallery
+                         </NavLink>
+                    </li>
+               )}
+               {user && (
+                    <li>
+                         <NavLink
+                              to="/Shop"
+                              className={({ isActive, isPending }) =>
+                                   isPending
+                                        ? "pending"
+                                        : isActive
+                                        ? "text-[#ff6900] underline"
+                                        : ""
+                              }
+                         >
+                              Shop
+                         </NavLink>
+                    </li>
+               )}
+
                <li>
                     <NavLink
                          to="/about"
@@ -72,6 +91,23 @@ const Navbar = () => {
                          Contact Us
                     </NavLink>
                </li>
+
+               {!user && (
+                    <li>
+                         <NavLink
+                              to="/login"
+                              className={({ isActive, isPending }) =>
+                                   isPending
+                                        ? "pending"
+                                        : isActive
+                                        ? "text-[#ff6900] underline"
+                                        : ""
+                              }
+                         >
+                              Login
+                         </NavLink>
+                    </li>
+               )}
                {/* <li>
                     <NavLink
                          to="/register"
@@ -86,34 +122,6 @@ const Navbar = () => {
                          Register
                     </NavLink>
                </li> */}
-               <li>
-                    <NavLink
-                         to="/decorations"
-                         className={({ isActive, isPending }) =>
-                              isPending
-                                   ? "pending"
-                                   : isActive
-                                   ? "text-[#ff6900] underline"
-                                   : ""
-                         }
-                    >
-                         Decorations Gallery
-                    </NavLink>
-               </li>
-               <li>
-                    <NavLink
-                         to="/Shop"
-                         className={({ isActive, isPending }) =>
-                              isPending
-                                   ? "pending"
-                                   : isActive
-                                   ? "text-[#ff6900] underline"
-                                   : ""
-                         }
-                    >
-                         Shop
-                    </NavLink>
-               </li>
           </>
      );
      return (
@@ -147,9 +155,9 @@ const Navbar = () => {
                                    {navLists}
                               </ul>
                          </div>
-                        
+
                          <p className="btn btn-ghost text-xl md:text-2xl text-[#fcb900] font-extrabold italic">
-                             RJ AGENCY
+                              RJ AGENCY
                          </p>
                     </div>
                     <div className="navbar-center hidden lg:flex">
@@ -184,7 +192,10 @@ const Navbar = () => {
                                         >
                                              <div>
                                                   <li>
-                                                       <a className="font-medium">User:{user.displayName}</a>
+                                                       <a className="font-medium">
+                                                            User:
+                                                            {user.displayName}
+                                                       </a>
                                                   </li>
                                                   <li>
                                                        {user ? (
