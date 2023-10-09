@@ -184,12 +184,12 @@ const Navbar = () => {
                                         >
                                              <div>
                                                   <li>
-                                                       <a>user:{user.email}</a>
+                                                       <a className="font-medium">User:{user.displayName}</a>
                                                   </li>
                                                   <li>
                                                        {user ? (
                                                             <button
-                                                                 className=""
+                                                                 className="font-medium"
                                                                  onClick={
                                                                       handleSignOut
                                                                  }

@@ -1,7 +1,6 @@
-
 # Social Event
 
-- click here for[social_event_live_link](https://accurate-toe.surge.sh/)
+-    [click here for social_event_live_link](https://accurate-toe.surge.sh/)
 
 This project is based on Social Events. Some useful features of my project written in below :-
 
