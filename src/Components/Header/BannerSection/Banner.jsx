@@ -7,7 +7,7 @@ const Banner = () => {
                          src="https://i.ibb.co/7R5Qvbt/Birthday-Party-min.webp"
                          alt=""
                     />
-                    <div className="absolute top-[30%] left-[24%] text-center w-[50%] space-y-5">
+                    <div className="absolute top-[25%] md:top-32 lg:top-[30%] left-[24%] text-center w-[50%] space-y-5">
                          <div
                               className="text-3xl md:text-4xl
                          lg:text-6xl font-bold"
@@ -28,7 +28,7 @@ const Banner = () => {
                                    (and time) to make it all look easy-going.
                               </p>
                          </div>
-                         <button className="btn border-none text-white bg-[#ff6900]">Book An Appointment</button>
+                         <button className="px-12 py-2 text-sm rounded-lg md:text-xl border-none text-white bg-[#ff6900]">Book An Appointment</button>
                     </div>
                </div>
           </div>
