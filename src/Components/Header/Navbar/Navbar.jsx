@@ -46,6 +46,34 @@ const Navbar = () => {
                </li>
                <li>
                     <NavLink
+                         to="/about"
+                         className={({ isActive, isPending }) =>
+                              isPending
+                                   ? "pending"
+                                   : isActive
+                                   ? "text-[#ff6900] underline"
+                                   : ""
+                         }
+                    >
+                         About Us
+                    </NavLink>
+               </li>
+               <li>
+                    <NavLink
+                         to="/contact"
+                         className={({ isActive, isPending }) =>
+                              isPending
+                                   ? "pending"
+                                   : isActive
+                                   ? "text-[#ff6900] underline"
+                                   : ""
+                         }
+                    >
+                         Contact Us
+                    </NavLink>
+               </li>
+               {/* <li>
+                    <NavLink
                          to="/register"
                          className={({ isActive, isPending }) =>
                               isPending
@@ -57,7 +85,7 @@ const Navbar = () => {
                     >
                          Register
                     </NavLink>
-               </li>
+               </li> */}
                <li>
                     <NavLink
                          to="/decorations"
@@ -119,9 +147,10 @@ const Navbar = () => {
                                    {navLists}
                               </ul>
                          </div>
-                         <a className="btn btn-ghost normal-case text-xl">
-                              Social Events
-                         </a>
+                        
+                         <p className="btn btn-ghost text-xl md:text-2xl text-[#fcb900] font-extrabold italic">
+                             RJ AGENCY
+                         </p>
                     </div>
                     <div className="navbar-center hidden lg:flex">
                          <ul className="menu menu-horizontal px-1">

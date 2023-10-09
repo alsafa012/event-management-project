@@ -9,6 +9,8 @@ import CardDetails from "../Components/CardSectionComponent/CardDetails";
 import PrivateRoute from "./PrivateRoute";
 import Decoration from "../Pages/Decoration/Decoration";
 import ShoppingPage from "../Pages/ShoppingPage/ShoppingPage";
+import AboutUs from "../Pages/AboutUs/AboutUs";
+import ContactPage from "../Pages/ContactPage/ContactPage";
 
 const myCreatedRouter = createBrowserRouter([
      {
@@ -56,6 +58,14 @@ const myCreatedRouter = createBrowserRouter([
                     ),
                     loader: () => fetch("/shop.json"),
                },
+               {
+                    path: "/about",
+                    element:<AboutUs></AboutUs>,
+               },
+               {
+                    path: "/contact",
+                    element:<ContactPage></ContactPage>,
+               }
           ],
      },
 ]);

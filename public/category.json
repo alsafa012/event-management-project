@@ -4,41 +4,65 @@
           "name": "Weddings",
           "image": "https://i.ibb.co/yPmznfB/unsplash-image-1-Bs2s-Z9f-D2-Q.jpg",
           "price": "79",
-          "description": "Join us to make your wedding joyful!"
+          "import": "Made in China",
+          "description": "Join us to make your wedding joyful!",
+          "location": "Beautiful Beach Resort",
+          "duration": "2 days",
+          "includes": "Catering, Photography, Music, Decorations"
      },
      {
           "id": "2",
           "name": "Birthday Parties",
           "image": "https://i.ibb.co/PxM9v5V/photo-1555077730-1b8b211018c4.jpg",
           "price": "50",
-          "description": "Join us to make your party unforgettable!"
+          "import": "Made in China",
+          "description": "Join us to make your party unforgettable!",
+          "location": "Party Hall",
+          "duration": "4 hours",
+          "includes": "Birthday Cake, Games, Party Favors"
      },
      {
           "id": "3",
           "name": "Anniversaries Event",
           "image": "https://i.ibb.co/NW84w9M/1686748229-large.jpg",
           "price": "25",
-          "description": "Join us to make your event unforgettable!"
+          "import": "Made in China",
+          "description": "Join us to make your event unforgettable!",
+          "location": "Garden Venue",
+          "duration": "1 day",
+          "includes": "Dinner, Live Entertainment,Decoration"
      },
      {
           "id": "4",
           "name": "Engagement Parties",
           "image": "https://i.ibb.co/pXSMtqC/love-406905.jpg",
           "price": "99",
-          "description": "Join us to make your event unforgettable!"
+          "import": "Made in China",
+          "description": "Join us to make your event unforgettable!",
+          "location": "Luxury Hotel",
+          "duration": "3 hours",
+          "includes": "Champagne Toast,Engagement Cake,Photography"
      },
      {
           "id": "5",
           "name": "Retirement Parties",
           "image": "https://i.ibb.co/swpTkd8/download-1.jpg",
           "price": "Free Admission",
-          "description": "Join us to make your retirement party special!"
+          "import": "Made in China",
+          "description": "Join us to make your retirement party special!",
+          "location": "Community Center",
+          "duration": "3 hours",
+          "includes": ["Speeches", "Refreshments", "Memorabilia Display"]
      },
      {
           "id": "6",
           "name": "Baby Shower",
           "image": "https://i.ibb.co/0tqGhYF/baby-shower.png",
           "price": "80",
-          "description": "Join us to make your baby shower party special!"
+          "import": "Made in China",
+          "description": "Join us to make your baby shower party special!",
+          "location": "Home",
+          "duration": "2 hours",
+          "includes": "Baby Shower Games,Gifts,Snacks"
      }
 ]

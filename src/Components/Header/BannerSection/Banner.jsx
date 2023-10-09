@@ -1,13 +1,9 @@
-
 const Banner = () => {
-     
      return (
           <div className="">
-               
                <div>
                     <img
                          className="bg-cover w-full h-[500px] object-cover relative opacity-95"
-                         
                          src="https://i.ibb.co/7R5Qvbt/Birthday-Party-min.webp"
                          alt=""
                     />
@@ -16,15 +12,23 @@ const Banner = () => {
                               className="text-3xl md:text-4xl
                          lg:text-6xl font-bold"
                          >
-                              <p className="text-[#fcb900]">We create</p>
-                              <p className="text-[#FFFFFF]">You..........</p>
-                              <p className="text-[#FFFFFF]">Celebrate</p>
+                              <p
+                                   data-aos="slide-down"
+                                   className="text-[#fcb900]"
+                              >
+                                   We create
+                              </p>
+                              <p data-aos="slide-up" className="text-[#FFFFFF]">You........</p>
+                              <p data-aos="slide-left" className="text-[#FFFFFF]">Celebrate</p>
                          </div>
                          <div>
                               <p className="text-[#FFFFFF] font-light">
-                                   Planning a Wedding, Proposal, or Event in our busy city is not so easy and it takes skills (and time) to make it all look easy-going.
+                                   Planning a Wedding, Proposal, or Event in our
+                                   busy city is not so easy and it takes skills
+                                   (and time) to make it all look easy-going.
                               </p>
                          </div>
+                         <button className="btn border-none text-white bg-[#ff6900]">Book An Appointment</button>
                     </div>
                </div>
           </div>

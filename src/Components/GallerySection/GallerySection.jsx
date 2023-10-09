@@ -44,14 +44,22 @@ const GallerySection = () => {
                     />
                </div>
 
-               <button
-                    onClick={handleGAllery}
-                    className="btn bg-[#ff6900] text-white"
-                    // className="btn bg-[#cf2e2e] text-white"
-               >
-                    {" "}
-                    See more{" "}
-               </button>
+               <div>
+                    <p className="text-xl font-light mb-1">
+                         See Our{" "}
+                         <span className="text-[#fcb900]">Best Events</span>{" "}
+                         Gallery!
+                    </p>
+
+                    <button
+                         onClick={handleGAllery}
+                         className="btn bg-[#ff6900] text-white"
+                         // className="btn bg-[#cf2e2e] text-white"
+                    >
+                         {" "}
+                         Visit Gallery{" "}
+                    </button>
+               </div>
           </div>
      );
 };
