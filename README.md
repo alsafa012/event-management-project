@@ -1,7 +1,7 @@
 # Social Event
 
--    [click here] for live_link(surge)(https://accurate-toe.surge.sh/)
--    [click here] for live_link(firebase)(https://social-events-auth.web.app/)
+-    for live_link"surge" [click here](https://accurate-toe.surge.sh/)
+-    for live_link"firebase" [click here](https://social-events-auth.web.app/)
 
 This project is based on Social Events. Some useful features of my project written in below :-
 
