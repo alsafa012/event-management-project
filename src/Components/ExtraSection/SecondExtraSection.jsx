@@ -1,8 +1,8 @@
 import React from "react";
-import { CiLocationOn } from "react-icons/ci";
-import { PiPhoneDuotone } from "react-icons/pi";
-import { AiOutlineFieldTime } from "react-icons/ai";
-import { GoIssueReopened } from "react-icons/go";
+// import { CiLocationOn } from "react-icons/ci";
+// import { PiPhoneDuotone } from "react-icons/pi";
+// import { AiOutlineFieldTime } from "react-icons/ai";
+// import { GoIssueReopened } from "react-icons/go";
 
 const SecondExtraSection = () => {
      return (
